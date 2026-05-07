@@ -18,11 +18,11 @@ background: https://cover.sli.dev
 
 <div class="text-center">
 
-<div class="text-blue-500 text-xs tracking-widest uppercase mb-2">Knowledge Graph for E-Commerce Troubleshooting</div>
+<div class="text-white-500 text-xs tracking-widest uppercase mb-2">Knowledge Graph for E-Commerce Troubleshooting</div>
 
 # 电商订单故障排查知识图谱
 
-<div class="text-slate-500 text-base mb-8">多源数据融合 · 故障定位 · 影响分析</div>
+<div class="text-white-500 text-base mb-8">多源数据融合 · 故障定位 · 影响分析</div>
 
 <div class="flex justify-center gap-5 items-end mb-5">
   <div class="w-20 h-14 rounded-xl border-2 border-orange-400/50 bg-orange-50 flex flex-col items-center justify-center">
@@ -61,6 +61,7 @@ background: https://cover.sli.dev
 
 ---
 layout: default
+background: false
 ---
 
 <!-- ===== Page 2: 多源数据汇入全景 ===== -->
@@ -88,6 +89,7 @@ flowchart LR
 
 ---
 layout: default
+background: false
 ---
 
 <!-- ===== Page 3: 实体分类卡片 ===== -->
@@ -171,6 +173,7 @@ layout: default
 
 ---
 layout: default
+background: false
 ---
 
 <!-- ===== Page 4: 实体思维导图 ===== -->
@@ -216,6 +219,7 @@ mindmap
 
 ---
 layout: default
+background: false
 ---
 
 <!-- ===== Page 5: 数据源关系卡片 ===== -->
@@ -285,6 +289,7 @@ layout: default
 
 ---
 layout: default
+background: false
 ---
 
 <!-- ===== Page 6: 数据源关系详细图 ===== -->
@@ -292,8 +297,11 @@ layout: default
 <h2 class="text-3xl font-bold text-slate-800 mb-1">数据源关系抽取详图</h2>
 <p class="text-slate-500 text-sm mb-3">Git · Issue · 日志 · API —— 四类数据源的结构化关系</p>
 
-```mermaid {scale: 0.62}
-flowchart TB
+
+<div class="flex flex-row">
+
+```mermaid {scale: 0.38}
+flowchart LR
     subgraph Git数据源
         Dev[开发人员] -->|提交| Commit[Git Commit]
         Commit -->|修改| File[代码文件]
@@ -308,6 +316,10 @@ flowchart TB
         Bug -->|关联| API1[API 接口]
     end
 
+```
+
+```mermaid {scale: 0.5}
+flowchart LR
     subgraph 日志数据源
         LogEvent[LogEvent] -->|聚类为| Exception[异常类型]
         LogEvent -->|关联| TraceId[TraceId]
@@ -322,8 +334,11 @@ flowchart TB
     end
 ```
 
+</div>
+
 ---
 layout: default
+background: false
 ---
 
 <!-- ===== Page 7: 核心知识图谱结构（PNG） ===== -->
@@ -337,6 +352,7 @@ layout: default
 
 ---
 layout: default
+background: false
 ---
 
 <!-- ===== Page 8: 订单模块核心图谱 Mermaid ===== -->
@@ -377,6 +393,7 @@ flowchart LR
 
 ---
 layout: default
+background: false
 ---
 
 <!-- ===== Page 9: 查询路径 Q1 ===== -->
@@ -422,6 +439,7 @@ flowchart LR
 
 ---
 layout: default
+background: false
 ---
 
 <!-- ===== Page 10: 查询路径 Q2 ===== -->
@@ -464,6 +482,7 @@ flowchart LR
 
 ---
 layout: default
+background: false
 ---
 
 <!-- ===== Page 11: 风险与对策 ===== -->
@@ -488,6 +507,7 @@ flowchart TB
 
 ---
 layout: default
+background: false
 ---
 
 <!-- ===== Page 12: 维护机制与闭环 ===== -->
