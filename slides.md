@@ -198,9 +198,11 @@ code {
 
 <div class="text-center">
 
-<div class="text-white-500 text-xs tracking-widest uppercase mb-2">Knowledge Graph for E-Commerce Troubleshooting</div>
-
 # 电商订单故障排查知识图谱
+
+<div class="mt-8 text-2xl font-bold text-white">12 小组</div>
+
+</div>
 
 ---
 layout: default
@@ -212,53 +214,102 @@ background: false
 <h2 class="text-3xl font-bold text-slate-800 mb-1">项目背景：电商订单排障为什么困难？</h2>
 <p class="text-slate-500 text-sm mb-4">订单故障往往跨越业务链路、系统模块和维护数据，单靠日志或经验很难快速定位。</p>
 
-<div class="grid grid-cols-[1.05fr_0.95fr] gap-4 h-[70%]">
+<div class="grid grid-cols-[1fr_auto_1fr] gap-3 h-[72%] items-stretch">
 
 <div class="rounded-xl border border-slate-200 bg-white/85 p-4 flex flex-col">
-  <div class="text-sm font-bold text-slate-800 mb-3">电商系统的复杂性</div>
-  <div class="grid grid-cols-2 gap-2 text-xs">
+  <div class="text-sm font-bold text-slate-800 mb-3">电商系统复杂性</div>
+  <div class="flex flex-col gap-2 text-xs">
     <div class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
-      <div class="font-bold text-slate-800 mb-1">链路长</div>
+      <b class="text-slate-800">链路长</b>
       <div class="text-slate-500 leading-snug">下单、支付、库存、物流、售后连续协作。</div>
     </div>
     <div class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
-      <div class="font-bold text-slate-800 mb-1">模块多</div>
+      <b class="text-slate-800">模块多</b>
       <div class="text-slate-500 leading-snug">订单模块与支付、库存、优惠等模块强耦合。</div>
     </div>
     <div class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
-      <div class="font-bold text-slate-800 mb-1">数据散</div>
+      <b class="text-slate-800">数据散</b>
       <div class="text-slate-500 leading-snug">Git、Issue、日志、API 文档分散存放。</div>
     </div>
     <div class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
-      <div class="font-bold text-slate-800 mb-1">变更多</div>
+      <b class="text-slate-800">变更多</b>
       <div class="text-slate-500 leading-snug">接口、代码文件和日志格式随版本持续变化。</div>
     </div>
   </div>
+</div>
 
-  <div class="mt-4 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-600">
-    典型问题：支付单已支付但订单仍未支付、库存扣减失败、订单与物流或售后状态不同步。
-  </div>
+<div class="flex flex-col justify-center gap-3 text-slate-400 text-xl">
+  <div>→</div>
+  <div>→</div>
+  <div>→</div>
+  <div>→</div>
 </div>
 
 <div class="rounded-xl border border-slate-200 bg-white/85 p-4 flex flex-col">
-  <div class="text-sm font-bold text-slate-800 mb-3">知识图谱解决的痛点</div>
+  <div class="text-sm font-bold text-slate-800 mb-3">对应痛点与图谱作用</div>
   <div class="flex flex-col gap-2 text-xs">
-    <div class="flex gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
-      <div class="w-6 h-6 rounded-full bg-slate-700 text-white flex items-center justify-center shrink-0">1</div>
-      <div><b class="text-slate-800">把分散信息关联起来</b><br/><span class="text-slate-500">Commit、Bug、LogEvent、TraceId、API 和测试用例进入同一张图。</span></div>
+    <div class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
+      <b class="text-slate-800">链路长 → 影响范围难判断</b>
+      <div class="text-slate-500 leading-snug">图谱把订单、支付单、库存记录、物流单和售后单串成业务路径。</div>
     </div>
-    <div class="flex gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
-      <div class="w-6 h-6 rounded-full bg-slate-700 text-white flex items-center justify-center shrink-0">2</div>
-      <div><b class="text-slate-800">把排查过程路径化</b><br/><span class="text-slate-500">从异常日志、订单、模块或 Commit 出发，沿关系路径定位影响范围。</span></div>
+    <div class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
+      <b class="text-slate-800">模块多 → 故障边界难定位</b>
+      <div class="text-slate-500 leading-snug">通过“模块—接口—日志—订单”关系定位跨模块同步问题。</div>
     </div>
-    <div class="flex gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
-      <div class="w-6 h-6 rounded-full bg-slate-700 text-white flex items-center justify-center shrink-0">3</div>
-      <div><b class="text-slate-800">把维护决策自动化</b><br/><span class="text-slate-500">支持故障定位、影响分析、Bug 统计和回归测试范围判断。</span></div>
+    <div class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
+      <b class="text-slate-800">数据散 → 排查信息来回切换</b>
+      <div class="text-slate-500 leading-snug">将 Commit、Bug、LogEvent、TraceId、API 和测试用例放入同一张图。</div>
+    </div>
+    <div class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
+      <b class="text-slate-800">变更多 → 回归测试容易遗漏</b>
+      <div class="text-slate-500 leading-snug">根据“文件—模块—接口—测试”路径推导变更后的回归范围。</div>
     </div>
   </div>
 </div>
 
 </div>
+
+
+---
+layout: default
+background: false
+---
+
+<!-- ===== Page 3: 方案分层概览 ===== -->
+
+<h2 class="text-3xl font-bold text-slate-800 mb-1">方案分层概览</h2>
+<p class="text-slate-500 text-sm mb-5">从实体建模到关系抽取，再到故障排查应用，形成完整的图谱方案</p>
+
+<div class="grid grid-cols-3 gap-4 h-[64%]">
+  <div class="rounded-xl border border-slate-200 bg-white/85 p-5 flex flex-col">
+    <div class="text-lg font-bold text-slate-800 mb-3">实体层</div>
+    <div class="text-sm text-slate-600 leading-relaxed">
+      覆盖订单、支付、库存、物流、售后等业务对象，以及 Commit、Bug、LogEvent、TraceId、API 接口和测试用例。
+    </div>
+    <div class="mt-auto pt-4 text-xs text-slate-500">解决“图谱中有哪些节点”的问题</div>
+  </div>
+
+  <div class="rounded-xl border border-slate-200 bg-white/85 p-5 flex flex-col">
+    <div class="text-lg font-bold text-slate-800 mb-3">关系层</div>
+    <div class="text-sm text-slate-600 leading-relaxed">
+      将代码变更、故障描述、日志异常、接口文档和测试用例连接为可追踪路径。
+    </div>
+    <div class="mt-auto pt-4 text-xs text-slate-500">解决“节点之间如何关联”的问题</div>
+  </div>
+
+  <div class="rounded-xl border border-slate-200 bg-white/85 p-5 flex flex-col">
+    <div class="text-lg font-bold text-slate-800 mb-3">应用层</div>
+    <div class="text-sm text-slate-600 leading-relaxed">
+      支持影响分析、异常反查、Bug 统计、人员定位和回归测试范围判断。
+    </div>
+    <div class="mt-auto pt-4 text-xs text-slate-500">解决“图谱如何服务排障”的问题</div>
+  </div>
+</div>
+
+<div class="mt-4 rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 text-sm text-slate-600">
+  这三层对应后续页面：实体分类、关系抽取、核心图谱结构和查询路径。
+</div>
+
 
 ---
 layout: default
@@ -382,58 +433,6 @@ background: false
   <div class="flex items-center gap-1"><div class="w-2.5 h-2.5 rounded-sm bg-slate-100 border border-slate-200"></div> 业务实体</div>
   <div class="flex items-center gap-1"><div class="w-2.5 h-2.5 rounded-sm bg-slate-100 border border-slate-200"></div> 维护实体</div>
   <div class="ml-auto text-slate-500">设计重点：业务对象负责描述故障发生位置，维护对象负责解释故障来源与修复过程。</div>
-</div>
-
----
-layout: default
-background: false
----
-
-<!-- ===== Page 4: 实体思维导图 ===== -->
-
-<h2 class="text-3xl font-bold text-slate-800 mb-1">实体全景视图</h2>
-<!-- <p class="text-slate-500 text-sm mb-3">五大类别 · 层次化展示</p> -->
-
-```mermaid {scale: 0.6}
-mindmap
-  root((电商订单故障排查图谱实体))
-    业务实体
-      用户
-      订单
-      商品
-      SKU
-      支付单
-      库存记录
-      物流单
-      售后单
-    系统模块实体
-      订单模块
-      支付模块
-      库存模块
-      物流模块
-      售后模块
-      优惠模块
-    代码变更实体
-      GitCommit
-      代码文件
-      开发人员
-      模块变更
-    故障日志实体
-      Issue
-      Bug
-      LogEvent
-      异常类型
-      TraceId
-    接口测试实体
-      API接口
-      API文档
-      测试用例
-```
-
-<div class="grid grid-cols-3 gap-2 mt-1 text-[10px] leading-snug">
-  <div class="rounded-lg bg-white/80 border border-slate-200 px-2 py-1"><b class="text-slate-700">业务核心</b>：订单连接用户、支付、库存、物流和售后。</div>
-  <div class="rounded-lg bg-white/80 border border-slate-200 px-2 py-1"><b class="text-slate-700">维护链路</b>：Commit、Issue、Bug 和人员记录变更来源。</div>
-  <div class="rounded-lg bg-white/80 border border-slate-200 px-2 py-1"><b class="text-slate-700">测试闭环</b>：接口与测试用例用于推导回归范围。</div>
 </div>
 
 ---
@@ -605,7 +604,6 @@ background: false
 <!-- ===== Page 7: 核心知识图谱结构（PNG） ===== -->
 
 <h2 class="text-3xl font-bold text-slate-800 mb-1">核心知识图谱结构</h2>
-<p class="text-slate-500 text-sm mb-3">以订单模块为中心，串联五维关联</p>
 
 <div class="flex justify-center h-[78%]">
   <img src="/kg-architecture.png" class="max-h-full max-w-full object-contain rounded-lg shadow-lg" />
@@ -626,7 +624,7 @@ background: false
 
 <!-- ===== Page 8: 订单模块核心图谱 Mermaid ===== -->
 
-<h2 class="text-3xl font-bold text-slate-800 mb-1">订单模块知识图谱</h2>
+<h2 class="text-3xl font-bold text-slate-800 mb-1">模块知识图谱</h2>
 <!-- <p class="text-slate-500 text-sm mb-3">业务链路 · 接口 · 代码 · Bug · 日志 —— 五维一体</p> -->
 
 ```mermaid {scale: 0.68}
@@ -637,9 +635,9 @@ flowchart LR
     Order -->|生成| Logistics[物流单]
     Order -->|产生| AfterSale[售后单]
 
-    OrderModule[订单模块]:::core -->|管理| Order
-    PaymentModule[支付模块] -->|处理| Payment
-    InventoryModule[库存模块] -->|管理| Inventory
+    OrderModule[订单模块]:::module -->|管理| Order
+    PaymentModule[支付模块]:::module -->|处理| Payment
+    InventoryModule[库存模块]:::module -->|管理| Inventory
 
     API[API 接口] -->|属于| OrderModule
     API -->|被覆盖| TestCase[测试用例]
@@ -657,7 +655,7 @@ flowchart LR
     TraceId -->|追踪| Order
     LogEvent -->|属于| OrderModule
 
-    classDef core fill:#3b82f6,stroke:#1e40af,color:#fff,stroke-width:2px
+    classDef module fill:#2563eb,stroke:#1e40af,color:#fff,stroke-width:2px
 ```
 
 <div class="grid grid-cols-2 gap-3 mt-2 text-xs">
@@ -781,6 +779,80 @@ layout: default
 background: false
 ---
 
+<!-- ===== Page 11: 补充查询 ===== -->
+
+<h2 class="text-3xl font-bold text-slate-800 mb-1">补充查询：统计与人员定位</h2>
+<p class="text-slate-500 text-sm mb-3">在单次故障定位之外，图谱还可以支持模块风险统计和人员经验沉淀</p>
+
+<div class="grid grid-cols-2 gap-4 h-[72%]">
+
+<div class="rounded-xl border border-slate-200 bg-white/85 p-4 flex flex-col">
+  <div>
+    <div class="text-xs text-slate-500 mb-1">查询三</div>
+    <div class="text-lg font-bold text-slate-800 mb-2">最近 30 天 Bug 最多的模块？</div>
+    <div class="grid grid-cols-[70px_1fr] gap-2 text-xs mb-2">
+      <div class="text-slate-500">输入条件</div>
+      <div class="text-slate-700">Bug 时间范围 = 最近 30 天</div>
+      <div class="text-slate-500">图谱路径</div>
+      <div class="text-slate-700">Issue → Bug → 影响模块 → 分组统计</div>
+      <div class="text-slate-500">统计口径</div>
+      <div class="text-slate-700">按系统模块聚合 Bug 数量并排序</div>
+    </div>
+  </div>
+
+  <div class="rounded-lg bg-slate-50 border border-slate-200 p-3 text-xs">
+    <div class="font-bold text-slate-800 mb-2">示例返回</div>
+    <div class="space-y-1">
+      <div class="flex justify-between"><span>订单模块</span><b>18 个</b></div>
+      <div class="flex justify-between"><span>支付模块</span><b>11 个</b></div>
+      <div class="flex justify-between"><span>库存模块</span><b>8 个</b></div>
+    </div>
+  </div>
+
+  <div class="mt-2 text-xs text-slate-500 leading-relaxed">
+    价值：识别高风险模块，为重点排查、代码审查和测试资源分配提供依据。
+  </div>
+</div>
+
+<div class="rounded-xl border border-slate-200 bg-white/85 p-4 flex flex-col">
+  <div>
+    <div class="text-xs text-slate-500 mb-1">查询四</div>
+    <div class="text-lg font-bold text-slate-800 mb-2">谁修复过支付相关 Bug 最多？</div>
+    <div class="grid grid-cols-[70px_1fr] gap-2 text-xs mb-2">
+      <div class="text-slate-500">输入条件</div>
+      <div class="text-slate-700">影响模块 = 支付模块</div>
+      <div class="text-slate-500">图谱路径</div>
+      <div class="text-slate-700">Bug → 影响模块 → 修复人员 → 分组统计</div>
+      <div class="text-slate-500">统计口径</div>
+      <div class="text-slate-700">按修复人员聚合支付相关 Bug 数量</div>
+    </div>
+  </div>
+
+  <div class="rounded-lg bg-slate-50 border border-slate-200 p-3 text-xs">
+    <div class="font-bold text-slate-800 mb-2">示例返回</div>
+    <div class="space-y-1">
+      <div class="flex justify-between"><span>张同学</span><b>9 个</b></div>
+      <div class="flex justify-between"><span>李同学</span><b>6 个</b></div>
+      <div class="flex justify-between"><span>王同学</span><b>4 个</b></div>
+    </div>
+  </div>
+
+  <div class="mt-2 text-xs text-slate-500 leading-relaxed">
+    价值：快速找到熟悉支付问题的人，辅助 Bug 分派、故障协同和经验复用。
+  </div>
+</div>
+
+</div>
+
+<div class="mt-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs text-slate-600">
+  这类查询体现图谱的统计能力：不仅能定位单个故障，也能沉淀模块风险和人员经验。
+</div>
+
+---
+layout: default
+background: false
+---
+
 <!-- ===== Page 11: 风险与对策 ===== -->
 
 <h2 class="text-3xl font-bold text-slate-800 mb-1">图谱维护：风险与对策</h2>
@@ -873,27 +945,12 @@ background: false
 
 <h2 class="text-4xl font-bold text-slate-800 mb-4">总结</h2>
 
-<div class="grid grid-cols-3 gap-4 text-left mb-6">
-  <div class="rounded-xl border border-slate-200 bg-white/80 p-4">
-    <div class="font-bold text-slate-700 mb-2">实体层</div>
-    <div class="text-sm text-slate-600 leading-relaxed">覆盖订单、支付、库存、物流、售后等业务对象，以及 Commit、Bug、LogEvent、TraceId、API 接口和测试用例。</div>
-  </div>
-  <div class="rounded-xl border border-slate-200 bg-white/80 p-4">
-    <div class="font-bold text-slate-700 mb-2">关系层</div>
-    <div class="text-sm text-slate-600 leading-relaxed">将代码变更、故障描述、日志异常、接口文档和测试用例连接为可追踪路径。</div>
-  </div>
-  <div class="rounded-xl border border-slate-200 bg-white/80 p-4">
-    <div class="font-bold text-slate-700 mb-2">应用层</div>
-    <div class="text-sm text-slate-600 leading-relaxed">支持影响分析、异常反查、Bug 统计、人员定位和回归测试范围判断。</div>
-  </div>
-</div>
-
 <div class="inline-flex flex-col gap-2 rounded-xl border border-slate-200 bg-slate-50 px-8 py-5 text-left">
   <div class="text-lg font-bold text-slate-800">核心价值</div>
   <div class="text-sm text-slate-600">帮助开发和维护人员更快回答：哪个模块出了问题？这次变更影响什么？应该找谁修、测哪些内容？</div>
 </div>
 
-<div class="mt-7 text-3xl font-bold text-slate-800">谢谢大家</div>
+<div class="mt-10 text-3xl font-bold text-slate-800">谢谢大家</div>
 <div class="mt-2 text-xs tracking-widest uppercase text-slate-400">Powered by Slidev</div>
 
 </div>
