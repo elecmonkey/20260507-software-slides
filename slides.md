@@ -202,50 +202,6 @@ code {
 
 # 电商订单故障排查知识图谱
 
-<div class="text-white-500 text-base mb-8">多源数据融合 · 故障定位 · 影响分析</div>
-
-<div class="mx-auto max-w-2xl text-sm text-slate-500 leading-relaxed mb-5">
-  面向订单支付成功未更新、库存扣减失败、物流售后状态不同步等跨模块故障，
-  将业务链路与维护链路统一到可查询的图谱视图中。
-</div>
-
-<div class="flex justify-center gap-5 items-end mb-5">
-  <div class="w-20 h-14 rounded-xl border-2 border-slate-200 bg-white/80 flex flex-col items-center justify-center">
-    <span class="text-base font-bold text-slate-700">Git</span>
-    <span class="text-xs text-slate-400">提交记录</span>
-  </div>
-  <div class="text-slate-300 mb-2">→</div>
-  <div class="w-20 h-14 rounded-xl border-2 border-slate-200 bg-white/80 flex flex-col items-center justify-center">
-    <span class="text-base font-bold text-slate-700">Issue</span>
-    <span class="text-xs text-slate-400">Bug 追踪</span>
-  </div>
-  <div class="text-slate-300 mb-2">→</div>
-  <div class="w-20 h-14 rounded-xl border-2 border-slate-200 bg-white/80 flex flex-col items-center justify-center">
-    <span class="text-base font-bold text-slate-700">日志</span>
-    <span class="text-xs text-slate-400">运行日志</span>
-  </div>
-  <div class="text-slate-300 mb-2">→</div>
-  <div class="w-20 h-14 rounded-xl border-2 border-slate-200 bg-white/80 flex flex-col items-center justify-center">
-    <span class="text-base font-bold text-slate-700">API文档</span>
-    <span class="text-xs text-slate-400">接口规范</span>
-  </div>
-</div>
-
-<div class="inline-flex px-8 py-3 rounded-full bg-slate-800 text-white text-lg font-bold shadow-lg mb-6">
-  故障排查知识图谱
-</div>
-
-<div class="flex justify-center gap-3">
-  <span class="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-sm text-slate-600">影响分析</span>
-  <span class="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-sm text-slate-600">故障定位</span>
-  <span class="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-sm text-slate-600">Bug 统计</span>
-  <span class="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-sm text-slate-600">回归测试</span>
-</div>
-
-<div class="mt-4 text-xs text-slate-400">核心问题：哪个模块出了问题？这次变更影响什么？应该找谁修、测哪些内容？</div>
-
-</div>
-
 ---
 layout: default
 background: false
